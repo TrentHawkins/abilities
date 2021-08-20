@@ -3,16 +3,7 @@ from abilities import *
 
 class Cyberpunk2077(Abilities):
 
-    """ Specialized Abilities class for Dungeons and Dragons.
-
-    Not only it includes the special D&D score schemas,
-    but implements augmenting printed scores with chosen race specific modifiers.
-
-    Static Attrtibutes:
-        _names: names for D&D score schemas
-        _schemas: the D&D score schemas (see Abilities class)
-        _races: the augmenting patterns for each race and subrace in D&D
-        _level: the augmenting patterns for leveling up characters (at attribute-iincreasing milestones)
+    """ Specialized Abilities class for Cyberpunk.
     """
 
 
@@ -49,7 +40,7 @@ class Cyberpunk2077(Abilities):
 
     def __str__(self)->str:
 
-        """ Wrapper for Abilities print with mod 3 for skill unlocking checkpoints.
+        """ Wrapper for Abilities print with mod 2 for skill unlocking checkpoints.
         """
 
 

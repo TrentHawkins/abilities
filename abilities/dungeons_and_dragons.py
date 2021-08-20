@@ -10,9 +10,8 @@ class DungeonsDragons(Abilities):
 
     Static Attrtibutes:
         _names: names for D&D score schemas
-        _schemas: the D&D score schemas (see Abilities class)
+        _definitions: the D&D score schemas (see Abilities class)
         _races: the augmenting patterns for each race and subrace in D&D
-        _level: the augmenting patterns for leveling up characters (at attribute-iincreasing milestones)
     """
 
 

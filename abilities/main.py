@@ -6,6 +6,7 @@ from simple_term_menu import TerminalMenu
 from abilities import *
 from dungeons_and_dragons import *
 from cyberpunk_2077 import *
+from disco_elysium import *
 
 
 if __name__ == "__main__":
@@ -51,7 +52,7 @@ if __name__ == "__main__":
     game_dict={
         "DungeonsDragons":"Dungeons and Dragons",
         "Cyberpunk2077":"Cyberpunk 2077",
-#       "KotOR":"Knights of the Old Republic",
+        "DiscoElysium":"Disco Elysium",
     }
 
     preferred_scores=set()
@@ -185,6 +186,25 @@ if __name__ == "__main__":
 
                     scores_list[scores_index]=re.sub("^ ","●",scores_list[scores_index])
                     preferred_scores.add(scores_list[scores_index])
+
+        if game==game_dict["DiscoElysium"]:
+            scores_list=[
+                f" {key:<{menu_width-1}}" for key in str(DiscoElysium()).split("\n")
+            ]
+            scores_index=0
+
+            while scores_index is not None:
+                scores_index=TerminalMenu(
+                    scores_list,
+                    title=f"{game}: ({len(scores_list)})\n",
+                    cursor_index=scores_index,  # The initially selected item index.
+                **menu_style).show()
+
+                if scores_index is None:
+                    break
+
+                scores_list[scores_index]=re.sub("^ ","●",scores_list[scores_index])
+                preferred_scores.add(scores_list[scores_index])
 
     for scores in sorted(preferred_scores):
         print(scores)
